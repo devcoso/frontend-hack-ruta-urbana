@@ -19,10 +19,11 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "dashboard",
+        index: true, 
         element: <Dashboard />,
       },
     ],
+    errorElement: <p>Página No Encontrada</p>,
   },
 ]);
 createRoot(document.getElementById('root')).render(
