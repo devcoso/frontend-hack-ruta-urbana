@@ -1,0 +1,10 @@
+
+
+export const getData = () => {
+
+
+    return {
+        
+    }
+}   
+    
