@@ -7,7 +7,8 @@ function Dashboard() {
 
   const {
     aforo_poblacion_data_menores,
-    aforo_poblacion_data_mayores
+    aforo_poblacion_data_mayores,
+    poblacion_data
   } = getData()
 
   return (
@@ -18,7 +19,7 @@ function Dashboard() {
           title='Índices más bajos de Aforo/Población por ABEG' 
           typeOfValue='Aforo/Población' 
           labels={aforo_poblacion_data_menores.map((item) => item.ABEG)} 
-          data_to_show={aforo_poblacion_data_menores.map((item) => item.indice)}
+          data_to_show={aforo_poblacion_data_menores.map((item) => item.INDICE)}
           xLabel='ABEG'
           yLabel='Aforo/Población'
           color='#d11a1a'
@@ -27,13 +28,14 @@ function Dashboard() {
           title='Índices más altos de Aforo/Población por ABEG' 
           typeOfValue='Aforo/Población' 
           labels={aforo_poblacion_data_mayores.map((item) => item.ABEG)} 
-          data_to_show={aforo_poblacion_data_mayores.map((item) => item.indice)}
+          data_to_show={aforo_poblacion_data_mayores.map((item) => item.INDICE)}
           xLabel='ABEG'
           yLabel='Aforo/Población'
           color='#59af31'
         />
-        <ABEGList list={[{}]} title="ABEG sin AFORO" color='text-red-700' />
-        <ABEGList list={[{}]} title="Todos los ABEG" color='text-primary' />
+      </div>
+      <div className="m-auto w-full md:w-4/5">
+        <ABEGList list={poblacion_data} />
       </div>
     </>
   )

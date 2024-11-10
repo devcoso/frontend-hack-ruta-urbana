@@ -4,17 +4,23 @@ export const getData = () => {
 
 
     //Obtener aforo/población
-    const aforo_poblacion_data = data.map((item) => {
+    const poblacion_data = data.map((item) => {
         return {
             "ABEG" : item.CVE_AGEB,
             "POBTOT" : item.POBTOT,
             "AFORO" : item.AFORO,
-            "indice" : item.AFORO / item.POBTOT
+            "INDICE" : item.AFORO / item.POBTOT
         }
     }).filter((item) => item.POBTOT > 0)
+    //QUITAR DUPLICADOS
+    .filter((item, index, self) =>
+        index === self.findIndex((t) => (
+            t.ABEG === item.ABEG
+        ))
+    )
 
     //Ordenar de menor a mayor
-    const aforo_poblacion_data_ordenado = aforo_poblacion_data.sort((a, b) => a.indice - b.indice)
+    const aforo_poblacion_data_ordenado = poblacion_data.sort((a, b) => a.INDICE - b.INDICE)
 
     //Obtener los 7 primeros
     const aforo_poblacion_data_menores = aforo_poblacion_data_ordenado.slice(0, 7)
@@ -25,6 +31,7 @@ export const getData = () => {
     return {
         aforo_poblacion_data_menores,
         aforo_poblacion_data_mayores,
+        poblacion_data
     }
 }   
     

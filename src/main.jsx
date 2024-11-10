@@ -23,7 +23,7 @@ const router = createBrowserRouter([
         element: <Dashboard />,
       },
     ],
-    errorElement: <p>Página No Encontrada</p>,
+    //errorElement: <p>Página No Encontrada</p>,
   },
 ]);
 createRoot(document.getElementById('root')).render(
