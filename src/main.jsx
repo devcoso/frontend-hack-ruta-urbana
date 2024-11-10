@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import './index.css'
 
-import Layout from './layout';
+import Layout from './Layout';
 
 // Pages
 import Dashboard from './pages/Dashboard';
