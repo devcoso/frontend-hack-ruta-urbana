@@ -11,7 +11,8 @@ import Layout from './Layout';
 // Pages
 import Dashboard from './pages/Dashboard';
 
-
+//Loaders
+import { loader } from './pages/Dashboard';
 
 const router = createBrowserRouter([
   {
@@ -21,9 +22,10 @@ const router = createBrowserRouter([
       {
         index: true, 
         element: <Dashboard />,
+        loader,
       },
     ],
-    //errorElement: <p>Página No Encontrada</p>,
+    errorElement: <p>Hubo un error</p>,
   },
 ]);
 createRoot(document.getElementById('root')).render(

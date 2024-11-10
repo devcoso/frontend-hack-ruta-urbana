@@ -6,6 +6,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const BarChart = ({title, typeOfValue, labels, data_to_show, xLabel, yLabel, color}) => {
+  console.log(data_to_show)
   const data = {
     labels: labels, // Etiquetas de las barras
     datasets: [
