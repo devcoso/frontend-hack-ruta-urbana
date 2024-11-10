@@ -49,7 +49,7 @@ function Dashboard() {
           data={ageb_list.slice(0, 100)} 
           xLabel='AGEB'
           yLabel='Población Total'
-          labels={ageb_list.map((item) => item.AGEB).slice}
+          labels={ageb_list.map((item) => item.AGEB).slice(0, 100)}
         />
       </div>
     </>
