@@ -27,11 +27,11 @@ function ABEGList({list}) {
   return (
     <div className="h-72 bg-white shadow-lg">
         <div className="w-11/12 h-1/6 flex mx-2 gap-2">  
-          <h1 className="text-center py-2 text-primary font-bold text-2xl md:text-3xl w-3/4">ABEG'S</h1>
+          <h1 className="text-center py-2 text-primary font-bold text-2xl md:text-3xl w-1/2 md:w-3/4">ABEG'S</h1>
             <input
                 type="text"
                 placeholder="Buscar ABEG"
-                className="border-2 border-gray-200 rounded-lg m-auto w-1/4"
+                className="border-2 border-gray-200 rounded-lg m-auto w-1/2 md:w-1/4"
                 onChange={(e) => setSearch(e.target.value)}  
             />
         </div>
