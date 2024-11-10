@@ -6,7 +6,7 @@ export const getData = () => {
     //Obtener aforo/población
     const poblacion_data = data.map((item) => {
         return {
-            "ABEG" : item.CVE_AGEB,
+            "AGEB" : item.CVE_AGEB,
             "POBTOT" : item.POBTOT,
             "AFORO" : item.AFORO,
             "INDICE" : item.AFORO / item.POBTOT
@@ -15,7 +15,7 @@ export const getData = () => {
     //QUITAR DUPLICADOS
     .filter((item, index, self) =>
         index === self.findIndex((t) => (
-            t.ABEG === item.ABEG
+            t.AGEB === item.AGEB
         ))
     )
 
