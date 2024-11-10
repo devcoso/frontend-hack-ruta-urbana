@@ -4,6 +4,7 @@ import AGEBList from '../components/AGEBList'
 import { getData } from '../data/getData'
 import { useLoaderData } from 'react-router-dom'
 import PoblatoinBarChart from '../components/PoblationBarChart'
+import VehiculesChart from '../components/VehiculesChart'
 
 export async function loader() {
   return await getData()
@@ -13,7 +14,8 @@ function Dashboard() {
   const {
     aforo_poblacion_data_menores,
     aforo_poblacion_data_mayores,
-    ageb_list
+    ageb_list,
+    patrones_movilidad
   } = useLoaderData();
 
   return (
@@ -50,6 +52,16 @@ function Dashboard() {
           xLabel='AGEB'
           yLabel='Población Total'
           labels={ageb_list.map((item) => item.AGEB).slice(0, 100)}
+        />
+      </div>
+      <div className="m-auto w-full md:w-4/5 my-6">
+        <h1 className="text-center py-2 text-primary font-bold text-2xl md:text-3xl ">Distribución de Viviendas con Vehículos por Área</h1>
+        <VehiculesChart 
+          title=''
+          data={patrones_movilidad.slice(0, 100)} 
+          xLabel='AGEB'
+          yLabel='Número de Vehículos'
+          labels={patrones_movilidad.map((item) => item.area).slice(0, 100)}
         />
       </div>
     </>

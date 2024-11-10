@@ -31,7 +31,8 @@ export const getData = async() => {
         return {
             aforo_poblacion_data_menores,
             aforo_poblacion_data_mayores,
-            ageb_list
+            ageb_list,
+            patrones_movilidad :data.patrones_movilidad
         }
     } catch (error) {  
         console.log(error)
