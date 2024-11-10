@@ -13,6 +13,7 @@ import Dashboard from './pages/Dashboard';
 
 //Loaders
 import { loader } from './pages/Dashboard';
+import LoadingPage from './pages/LoadingPage';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider
       router={router}
-      fallbackElement={<p> Loading... </p>}
+      fallbackElement={<LoadingPage />}
     />
   </StrictMode>,
 )
